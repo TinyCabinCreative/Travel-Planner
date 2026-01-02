@@ -1,6 +1,12 @@
 "use client";
-import Image from "next/image";
+
+import React from "react";
 import Link from "next/link";
+import { signOut } from "@/auth";
+import { Session } from "next-auth";
+import { login, logout } from "@/lib/auth-actions";
+import Image from "next/image";
+import logo from "/logo.png";
 
 export default function Navbar() {
     return (
@@ -22,8 +28,8 @@ export default function Navbar() {
                         Globe
                     </Link>
 
-                    <button className="flex items-center space-x-6 bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 cursor-pointer" 
-                    onClick={login}>
+                    <button className="flex items-center space-x-6 bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700 cursor-pointer"
+                        onClick={login}>
                         Sign In
                         <svg
                             className="w-6 h-6 ml-3"
